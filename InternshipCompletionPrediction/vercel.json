@@ -1,6 +1,6 @@
 {
   "buildCommand": "",
-  "outputDirectory": "./",
+  "outputDirectory": "InternshipCompletionPrediction",
   "public": true,
   "cleanUrls": true,
   "trailingSlash": false,
