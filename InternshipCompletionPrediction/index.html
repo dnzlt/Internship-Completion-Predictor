@@ -1,0 +1,164 @@
+<html>
+    <head>
+        <title>Internship Completion Prediction</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Internship Completion Prediction</h1>
+            <p class="subtitle">Calculate your internship finish date with ease</p>
+            <form>
+                <div class="form-group">
+                    <label for="start_date">Starting Date</label>
+                    <input type="date" id="start_date" name="start_date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="duration">Duration (in hours)</label>
+                    <input type="number" id="duration" name="duration" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="hours_per_week">Hours per week</label>
+                    <input type="number" id="hours_per_week" name="hours_per_week" required>
+                </div>
+
+                <div class="form-group">
+                    <p class="section-title">Working Days</p>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="monday" name="day" value="Monday">
+                            <label for="monday">Monday</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="tuesday" name="day" value="Tuesday">
+                            <label for="tuesday">Tuesday</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="wednesday" name="day" value="Wednesday">
+                            <label for="wednesday">Wednesday</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="thursday" name="day" value="Thursday">
+                            <label for="thursday">Thursday</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="friday" name="day" value="Friday">
+                            <label for="friday">Friday</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="saturday" name="day" value="Saturday">
+                            <label for="saturday">Saturday</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p class="section-title">Philippine Holidays to Exclude</p>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="newyear" name="holiday" value="2026-01-01" checked>
+                            <label for="newyear">New Year's Day (Jan 1)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="lunarnewyear" name="holiday" value="2026-02-17" checked>
+                            <label for="lunarnewyear">Lunar New Year (Feb 17)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="edsa" name="holiday" value="2026-02-25" checked>
+                            <label for="edsa">EDSA Revolution Day (Feb 25)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="araw" name="holiday" value="2026-04-09" checked>
+                            <label for="araw">Araw ng Kagitingan (Apr 9)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="maundythurs" name="holiday" value="2026-04-16" checked>
+                            <label for="maundythurs">Maundy Thursday (Apr 16)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="goodfri" name="holiday" value="2026-04-17" checked>
+                            <label for="goodfri">Good Friday (Apr 17)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="blacksat" name="holiday" value="2026-04-18" checked>
+                            <label for="blacksat">Black Saturday (Apr 18)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="laborday" name="holiday" value="2026-05-01" checked>
+                            <label for="laborday">Labor Day (May 1)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="indag" name="holiday" value="2026-06-12" checked>
+                            <label for="indag">Independence Day (Jun 12)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ninoy" name="holiday" value="2026-08-21" checked>
+                            <label for="ninoy">Ninoy Aquino Day (Aug 21)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="nationaldayphy" name="holiday" value="2026-08-31" checked>
+                            <label for="nationaldayphy">National Heroes Day (Aug 31)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="allsaintsday" name="holiday" value="2026-11-01" checked>
+                            <label for="allsaintsday">All Saints' Day (Nov 1)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="bonifacio" name="holiday" value="2026-11-30" checked>
+                            <label for="bonifacio">Bonifacio Day (Nov 30)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="christmas" name="holiday" value="2026-12-25" checked>
+                            <label for="christmas">Christmas Day (Dec 25)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="rizal" name="holiday" value="2026-12-30" checked>
+                            <label for="rizal">Rizal Day (Dec 30)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p class="section-title">Custom Days to Exclude</p>
+                    <p class="subtitle" style="font-size: 0.9rem; margin: 10px 0 15px 0;">Add your own holidays, college weeks, or special days</p>
+                    <div id="custom-holidays-container">
+                        <div class="custom-holiday-item">
+                            <input type="date" class="custom-holiday-input" placeholder="Select date">
+                            <input type="text" class="custom-holiday-name" placeholder="Holiday name (e.g., College Week)">
+                            <button type="button" class="btn btn-sm btn-danger" onclick="removeCustomHoliday(this)">Remove</button>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-success" onclick="addCustomHoliday()" style="margin-top: 10px;">+ Add Another</button>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" onclick="calculateFinishDate()" class="btn btn-primary">Calculate Finish Date</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="resultModalLabel">Prediction Result</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="result">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script src="script.js"></script>
+    </body>
+</html>
