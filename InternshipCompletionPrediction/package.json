@@ -1,0 +1,9 @@
+{
+  "name": "internship-completion-prediction",
+  "version": "1.0.0",
+  "description": "Calculate your internship finish date",
+  "private": true,
+  "scripts": {
+    "start": "npx http-server"
+  }
+}
